@@ -23,8 +23,8 @@
     }
   },
   "include": [
-    "next-env.d.ts",
-    "next-auth.d.ts",
+    "frontend/next-env.d.ts",
+    "frontend/next-auth.d.ts",
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts"
