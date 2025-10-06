@@ -292,3 +292,11 @@ function ProfileContent() {
   );
 }
 
+// Suspense boundary
+export default function ProfilePage() {
+  return (
+    <Suspense fallback={<LoadingProfile />}>
+      <ProfileContent />
+    </Suspense>
+  );
+}
