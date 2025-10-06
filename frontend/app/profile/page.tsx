@@ -278,7 +278,20 @@ function ProfileContent() {
               </div>
             </TabsContent>
 
-           
+            <TabsContent value="settings">
+              <div className="grid grid-cols-1 gap-8">
+                <SecuritySettings
+                  currentPassword={currentPassword}
+                  newPassword={newPassword}
+                  confirmPassword={confirmPassword}
+                  setCurrentPassword={setCurrentPassword}
+                  setNewPassword={setNewPassword}
+                  setConfirmPassword={setConfirmPassword}
+                  handlePasswordUpdate={handlePasswordUpdate}
+                  isUpdatingPassword={isUpdatingPassword}
+                  passwordError={passwordError}
+                  passwordSuccess={passwordSuccess}
+                />
                 <NotificationPreferences />
                 <AccountActions hasPasswordAuth={hasPasswordAuth} />
               </div>
