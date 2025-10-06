@@ -1,3 +1,24 @@
+"use client";
+
+import type React from "react";
+import { useState, useEffect, Suspense } from "react";
+import { useRouter, useSearchParams } from "next/navigation";
+import { useSession } from "next-auth/react";
+import { Loader2 } from "lucide-react";
+import { toast } from "sonner";
+
+import Header from "@/components/layout/Header";
+import Footer from "@/components/layout/Footer";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { ProfileHeader } from "@/components/profile/profile-header";
+import { ProfileSidebar } from "@/components/profile/profile-sidebar";
+import { PersonalInfoForm } from "@/components/profile/personal-info-form";
+import { CollaborationPreferences } from "@/components/profile/collaboration-preferences";
+import { SecuritySettings } from "@/components/profile/security-settings";
+import { NotificationPreferences } from "@/components/profile/notification-preferences";
+import { AccountActions } from "@/components/profile/account-actions";
+import { useUserSettings } from "@/components/context/UserSettingsContext";
+import { checkPassword } from "@/lib/utils";
 
 // Loading fallback component
 function LoadingProfile() {
