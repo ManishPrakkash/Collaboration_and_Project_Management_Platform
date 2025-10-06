@@ -22,6 +22,28 @@ import { getInitials } from "@/lib/utils";
 import { getStatusBadge, getRoleBadge } from "@/lib/badge-utils";
 import { formatDate } from "@/lib/utils";
 
+interface UserProfile {
+  id: string;
+  name: string | null;
+  email: string;
+  image: string | null;
+  createdAt: string;
+  profile?: {
+    bio?: string;
+    skills?: string;
+    jobTitle?: string;
+    department?: string;
+  };
+  projectsCount: number;
+  publicProjects: Array<{
+    id: string;
+    name: string;
+    description: string | null;
+    status: string;
+    memberCount: number;
+    userRole: string;
+  }>;
+}
 
 function UserProfileContent() {
   const params = useParams();
